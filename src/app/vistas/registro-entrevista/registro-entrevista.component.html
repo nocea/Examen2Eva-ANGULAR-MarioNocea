@@ -1,0 +1,64 @@
+<div class="container mt-4">
+    <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <!--No me ha dado tiempo a hacer el control de fecha ni el control de si el puesto ya esta cogido
+      o no con un checkbox o algo parecido-->
+<form [formGroup]="formulario">
+    <div class="mb-2">
+    <input type="text" class="form-control form-control-sm" formControlName="fechaEntrevista" placeholder="Fecha Entrevista (Formato dia/mes/año)">
+    </div>
+    <div>{{mensajeFecha}}</div>
+</form>
+</div>
+</div>
+<div class="row">
+  <h2 class="text-center mb-4">Candidatos</h2>
+    <table class="table table-bordered table-hover">
+      <thead class="text-center">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Borrar</th>
+          <th>Editar</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let candidato of candidatos;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{candidato.nombre}}</td>
+          <td>{{candidato.apellidos}}</td>
+          <td>{{candidato.dni}}</td>
+          <td><button class="btn btn-outline-success" (click)="guardarCandidato(candidato)">Elegir</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div [style.color]="creado?'green':'red'">{{mensajeCandidato}}</div>
+</div>
+<div class="row">
+  <h2 class="text-center mb-4">Puestos</h2>
+    <table class="table table-bordered table-hover">
+      <thead class="text-center">
+        <tr>
+          <th>ID</th>
+          <th>Nombre Puesto</th>
+          <th>Elegir</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let puesto of puestos;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{puesto.nombrePuesto}}</td>
+          <td><button class="btn btn-outline-success" (click)="guardarPuesto(puesto)">Elegir</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div [style.color]="creado?'green':'red'">{{mensajePuesto}}</div>
+</div>
+<div class="row">
+  <button class="btn btn-outline-success" (click)="guardarEntrevista()">Guardar Entrevista</button>
+  <div [style.color]="creado?'green':'red'">{{mensajeFinal}}</div>
+</div>
+</div>
+
+

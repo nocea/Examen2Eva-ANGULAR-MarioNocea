@@ -1,0 +1,13 @@
+<div class="container mt-4">
+    <div class="row">
+    <div class="col-md-6 offset-md-3">
+<form [formGroup]="formulario" (submit)="onSubmit()">
+    <div class="mb-2">
+    <input type="text" class="form-control form-control-sm" formControlName="nombrePuesto" placeholder="Nombre Puesto">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar</button><div class="inline-div"[style.color]="creado?'green':'red'">{{mensaje}}</div>
+</form>
+</div>
+</div>
+</div>
+

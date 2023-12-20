@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "Examen2Eva",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

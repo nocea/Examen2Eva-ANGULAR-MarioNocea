@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Entrevistas</h2>
+    <table class="table table-bordered table-hover">
+      <thead class="text-center">
+        <tr>
+          <th>ID</th>
+          <th>Fecha Entrevista</th>
+          <th>Puesto</th>
+          <th>Nombre Candidato</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let entrevista of entrevista;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{entrevista.fechaEntrevista}}</td>
+          <td>{{entrevista.puesto.nombrePuesto}}</td>
+          <td>{{entrevista.candidato.nombre}}</td>
+          <td><button class="btn btn-outline-danger" (click)="delEntrevista(entrevista)">Borrar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

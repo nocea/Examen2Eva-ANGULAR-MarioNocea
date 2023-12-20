@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ludoteca-75689": {
+      "hosting": {
+        "Examen2Eva": [
+          "ludoteca-75689"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ludoteca-75689"
+  }
+}

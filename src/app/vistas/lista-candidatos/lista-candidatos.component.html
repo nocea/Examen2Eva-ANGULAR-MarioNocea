@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Candidatos</h2>
+    <table class="table table-bordered table-hover">
+      <thead class="text-center">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Borrar</th>
+          <th>Editar</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let candidato of candidatos;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{candidato.nombre}}</td>
+          <td>{{candidato.apellidos}}</td>
+          <td>{{candidato.dni}}</td>
+          <td><button class="btn btn-outline-danger" (click)="delCandidato(candidato)">Borrar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
